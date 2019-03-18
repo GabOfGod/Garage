@@ -34,31 +34,31 @@ public class OficinaResource {
     @Autowired
     OficinaRepository oficinaRepository;
 
-    @ApiOperation(value="Retorna uma lista de Produtos")
+    @ApiOperation(value="Retorna uma lista de Oficinas")
     @GetMapping("/oficina")
     public List<Oficina> listaProdutos(){
             return oficinaRepository.findAll();
     }
 
-    @ApiOperation(value="Retorna um produto unico")
+    @ApiOperation(value="Retorna uma oficina")
     @GetMapping("/oficina/{id}")
     public Oficina listaProdutoUnico(@PathVariable(value="id") long id){
             return oficinaRepository.findById(id);
     }
 
-    @ApiOperation(value="Salva um produto")
+    @ApiOperation(value="Salva uma oficina")
     @PostMapping("/oficina")
     public Oficina salvaProduto(@RequestBody Oficina oficina) {
             return oficinaRepository.save(oficina);
     }
 
-    @ApiOperation(value="Deleta um produto")
+    @ApiOperation(value="Deleta uma oficina")
     @DeleteMapping("/oficina")
     public void deletaProduto(@RequestBody Oficina oficina) {
            oficinaRepository.delete(oficina);
     }
 
-    @ApiOperation(value="Atualiza um produto")
+    @ApiOperation(value="Atualiza uma oficina")
     @PutMapping("/oficina")
     public Oficina atualizaProduto(@RequestBody Oficina oficina) {
             return oficinaRepository.save(oficina);
